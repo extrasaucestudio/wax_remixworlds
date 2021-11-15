@@ -14,7 +14,8 @@ const Home = () => {
                 image={config.market_image}
             />
             <div className={cn('container mx-auto my-20')}>
-                <h4>Page Content goes here</h4>
+                <center>
+                <img src="/freecity-playtoearn-soon.png" alt="FreeCityGame"/><h4>FreeCityGame</h4></center>
             </div>
         </Page>
     );
