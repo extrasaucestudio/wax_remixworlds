@@ -15,7 +15,7 @@ const Home = () => {
             />
             <div className={cn('container mx-auto my-20')}>
                 <center>
-                <img src="/freecity-playtoearn-soon.png" alt="FreeCityGame"/><h4>FreeCityGame</h4></center>
+                <img src="/freecity-playtoearn-soon2.png" alt="FreeCityGame"/><h4>FreeCityGame</h4></center>
             </div>
         </Page>
     );
