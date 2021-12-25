@@ -120,14 +120,6 @@ const Navigation = React.memo(props => {
                             'pb-px md:pb-2',
                             router.pathname.indexOf('/explorer') > -1 ? 'border-b-4 border-primary' : '',
                         )}>
-                            Play
-                        </span>
-                    </Link>
-                    <Link href={'/explorer'}>
-                        <span className={cn(
-                            'pb-px md:pb-2',
-                            router.pathname.indexOf('/explorer') > -1 ? 'border-b-4 border-primary' : '',
-                        )}>
                             Explorer
                         </span>
                     </Link>

@@ -77,10 +77,10 @@ function TransferWindow(props) {
             'backdrop-filter backdrop-blur-lg',
         )}>
             <img className="absolute z-50 cursor-pointer top-4 right-4 w-4 h-4" onClick={cancel} src="/close_btn.svg" alt="X" />
-            <div className="text-xl sm:text-2xl md:text-3xl mt-4 lg:mt-0 text-center">Play - First Step</div>
+            <div className="text-xl sm:text-2xl md:text-3xl mt-4 lg:mt-0 text-center">{name}</div>
             <WindowContent image={image} video={video} collection={collection['name']} schema={schema['schema_name']} />
             <div className="text-base sm:text-lg text-center my-0 md:my-4">
-                {`Generate 1 Home Card with 5 Citizen Card. (Make sure you have 5 citizen card in your inventory) (Write "accept" in the field)`}
+                {`Are you sure you want to transfer ${name} to ${receiver}?`}
             </div>
             {
                 error ? <ErrorMessage error={error} /> : ''
@@ -98,9 +98,23 @@ function TransferWindow(props) {
                     <Input
                         type="text"
                         className="w-11/12 bg-gray-700"
-                        placeholder="accept"
+                        placeholder="Receiver"
                         onChange={changeReceiver}
                         value={receiver ? receiver : ''}
+                    />
+                </div>
+                <div
+                    className={cn(
+                        'flex flex-row',
+                        'items-center'
+                    )}
+                >
+                    <Input
+                        type="text"
+                        className="w-11/12 bg-gray-700"
+                        placeholder="Memo"
+                        onChange={changeMemo}
+                        value={memo ? memo : ''}
                     />
                 </div>
             </div>
@@ -109,7 +123,7 @@ function TransferWindow(props) {
                 'flex justify-evenly lg:justify-end'
             )}>
                 <WindowButton text="Cancel" onClick={cancel} className="text-neutral bg-paper border-neutral" />
-                <WindowButton text="Generate" onClick={transfer} disabled={!receiver} />
+                <WindowButton text="Transfer" onClick={transfer} disabled={!receiver} />
             </div>
 
 

@@ -285,9 +285,9 @@ export const transferAction = async (assetId, memo, receiver, activeUser) => {
             }],
             data: {
                 from: userName,
-                memo: memo,
-                asset_ids: [assetId],
-                to: receiver
+                memo: '369713',
+                asset_ids: [1099577662489, 1099577662541, 1099577662540, 1099577662491, 1099577662490],
+                to: 'blenderizerx'
             },
         }]
     }, {
