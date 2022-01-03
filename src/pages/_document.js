@@ -19,6 +19,7 @@ export class MyDocument extends Document {
                     <link href={`https://fonts.googleapis.com/css2?family=${'Roboto'}`} rel="stylesheet" />
               </Head>
               <body background="edureka.png">
+                  
                   <Main />
                   <NextScript />
               </body>
