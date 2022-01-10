@@ -7,7 +7,7 @@ export default function Header(
 
   return (
     <Head>
-        <title>{title}</title>
+        <title>{title} - FreeCity</title>
         <meta id="og-title" property="og:title" content={title} />
         <meta id="og-description" property="og:description" content={description} />
         <meta id="og-image" property="og:image" content={image} />
