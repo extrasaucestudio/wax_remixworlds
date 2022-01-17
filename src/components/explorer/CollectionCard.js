@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from "classnames";
 
-import LazyLoad from "react-lazy-load";
+import LazyLoad from '../helpers/LazyLoad'
 
 import Link from '../common/util/input/Link';
 import config from "../../config.json";

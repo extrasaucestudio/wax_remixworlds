@@ -7,8 +7,7 @@ import AssetCard from "../assetcard/AssetCard";
 import {Context} from "../marketwrapper";
 import {getValues} from "../helpers/Helpers";
 import config from "../../config.json";
-import {post} from "superagent/lib/client";
-import {getAssets} from "../api/Api";
+import {getAssets, post} from "../api/Api";
 
 export default function UnclaimedPacksList(props) {
     const [ state, dispatch ] = useContext(Context);
@@ -45,8 +44,8 @@ export default function UnclaimedPacksList(props) {
         let unboxer = null;
 
         results.map(res => {
-            if (res && res.status === 200 && res.body && res.body.rows) {
-                res.body.rows.map(row => {
+            if (res && res.rows) {
+                res.rows.map(row => {
                     if (!unboxer) {
                         unboxer = row.unboxer;
                     }
@@ -54,8 +53,6 @@ export default function UnclaimedPacksList(props) {
                 });
             }
         });
-
-        console.log(asset_ids);
 
         if (asset_ids.length > 0)
             getAssets({ids: asset_ids, limit: config.limit}).then(res => getAssetsResult(res, unboxer));

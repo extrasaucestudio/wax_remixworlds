@@ -25,7 +25,7 @@ function CardImage(props) {
         <div className="flex content-center">
             {
                 image ?
-                    <img className="preview-img my-auto max-h-full" src = {image} alt="none" /> :
+                    <img className="preview-img m-auto max-h-full" src = {image} alt="none" /> :
                     video && <video className={cn(
                         "w-full"
                     )} id={'video'+index} width="190" height="190" loop src={video}
