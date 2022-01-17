@@ -8,7 +8,6 @@ import Page from "../common/layout/Page"
 import cn from 'classnames';
 import LoadingIndicator from "../loadingindicator/LoadingIndicator";
 import {Context} from "../marketwrapper";
-import ReactMarkdown from 'react-markdown';
 import DropButtons from "../dropbuttons/DropButtons";
 import {getDrop} from "../api/Api";
 

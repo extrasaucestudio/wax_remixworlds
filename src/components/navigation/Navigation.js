@@ -147,6 +147,14 @@ const Navigation = React.memo(props => {
                             Drops
                         </span>
                     </Link>
+                    <Link href={'/blends'}>
+                        <span className={cn(
+                            'pb-px md:pb-2',
+                            router.pathname.indexOf('/blends') > -1 ? 'border-b-4 border-primary' : '',
+                        )}>
+                            Blends
+                        </span>
+                    </Link>
                     {isLoading ? <LoadingIndicator /> : userName ?
                         <div className="w-full md:w-auto flex justify-center items-center pb-4 md:pb-0">
                             <div className="text-primary">

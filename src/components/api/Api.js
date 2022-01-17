@@ -1,5 +1,3 @@
-import axios from "axios";
-
 import config from "../../config.json";
 import Long from 'long';
 
@@ -179,12 +177,17 @@ export const getAuction = (auctionId) => {
         atomic_api + `/atomicmarket/v1/auctions/${auctionId}`).then(res => res.json());
 };
 
-const post = (url, data) =>
-    axios({
+/**
+ *
+ * @param {string} url
+ * @param {any=} data
+ * @returns {Promise<unknown>}
+ */
+export const post = (url, data) =>
+    fetch(url, {
         method: 'post',
-        url: url,
-        data: data
-    }).then(res => res);
+        body: JSON.stringify(data),
+    }).then((res) => res.json())
 
 export const loadCollections = async () => {
     const body = {
@@ -223,7 +226,7 @@ const charidx = ch => {
     return idx;
 };
 
-function getCollectionHex(collection) {
+export const getCollectionHex = (collection) => {
     if (typeof collection !== 'string')
         throw new TypeError('name parameter is a required string');
 
@@ -247,6 +250,60 @@ function getCollectionHex(collection) {
 
     return bytesToHex(longVal.toBytes());
 }
+
+export const getBlend = async (blendId) => {
+    const body = {
+        "json": true,
+        "code": 'blend.nefty',
+        "scope": 'blend.nefty',
+        "table": "blends",
+        'table_key': '',
+        'lower_bound': blendId,
+        'upper_bound': blendId,
+        "index_position": 1,
+        'key_type': '',
+        "limit": 1,
+        "reverse": false,
+        "show_payer": false
+    }
+
+    const url = config.api_endpoint + '/v1/chain/get_table_rows';
+
+    const res = await post(url, body);
+
+    if (res && res.status === 200 && res.data.rows.length > 0) {
+        return res.data.rows[0];
+    }
+
+    return null;
+};
+
+export const getBlenderizer = async (templateId) => {
+    const body = {
+        "json": true,
+        "code": 'blenderizerx',
+        "scope": 'blenderizerx',
+        "table": "blenders",
+        'table_key': '',
+        'lower_bound': templateId,
+        'upper_bound': templateId,
+        "index_position": 1,
+        'key_type': '',
+        "limit": 1,
+        "reverse": false,
+        "show_payer": false
+    }
+
+    const url = config.api_endpoint + '/v1/chain/get_table_rows';
+
+    const res = await post(url, body);
+
+    if (res && res.rows.length > 0) {
+        return res.rows[0];
+    }
+
+    return null;
+};
 
 export const getPacks = async (filters) => {
     const packs = [];

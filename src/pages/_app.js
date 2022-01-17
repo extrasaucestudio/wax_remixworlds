@@ -3,7 +3,7 @@ import '../styles/Search.css';
 import '../styles/App.css';
 import '../styles/globals.css';
 import "regenerator-runtime/runtime";
-import {withUAL, UALProvider} from "ual-reactjs-renderer";
+import {withUAL, UALProvider} from "hive-ual-renderer";
 import Footer from "../components/footer";
 import Navigation from "../components/navigation/Navigation";
 import {Anchor} from "ual-anchor";
@@ -12,7 +12,6 @@ import WindowWrapper from "../components/windows/WindowWrapper";
 import {QueryClient, QueryClientProvider} from 'react-query'
 import React, {useContext, useEffect, useState} from 'react';
 import MarketWrapper, {Context} from "../components/marketwrapper";
-import cn from "classnames";
 
 import config from '../config.json';
 import {getCollections, getSchemas, getTemplates, loadCollections, getPacks} from "../components/api/Api";

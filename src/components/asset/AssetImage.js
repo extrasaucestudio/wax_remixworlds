@@ -9,9 +9,9 @@ const AssetImage = (props) => {
 
     const asset = props['asset'];
 
-    const {data, asset_id} = asset;
+    const {immutable_data, data, asset_id} = asset;
 
-    const {img, backimg, video} = data;
+    const {img, backimg, video} = data ? data : immutable_data;
 
     const media = [];
     const mediaFormats = [];
