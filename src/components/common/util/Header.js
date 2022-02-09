@@ -7,7 +7,7 @@ export default function Header(
 
   return (
     <Head>
-        <title>{title} - Free City - NFT Game</title>
+        <title>{title} - Free City</title>
         <meta id="og-title" property="og:title" content={title} />
         <meta id="og-description" property="og:description" content={description} />
         <meta id="og-image" property="og:image" content={image} />

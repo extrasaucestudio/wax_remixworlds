@@ -5,7 +5,7 @@
     "market_url": "https://wax.remixworlds.com",
     "default_collection": "freecitygame",
     "api_endpoint": "http://wax.cryptolions.io",
-    "limit": 99,
+    "limit": 50,
     "drops_contract": "neftyblocksd",
     "packs_contracts": ["atomicpacksx", "neftyblocksp"],
     "telegram_link": "https://t.me/remixworlds",
