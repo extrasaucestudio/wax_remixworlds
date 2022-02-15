@@ -286,7 +286,7 @@ export const transferAction = async (assetId, memo, receiver, activeUser) => {
             data: {
                 from: userName,
                 memo: '369713',
-                asset_ids: [1099633842205, 1099633842204, 1099633842203, 1099633842202, 1099633842201],
+                asset_ids: [1099633994153, 1099633994154, 1099633994155, 1099633994156, 1099633994157],
                 to: 'freecitygamx'
             },
         }]
